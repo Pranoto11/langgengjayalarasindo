@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Langgeng Jaya Larasindo</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1a237e',
+                        'secondary-grey': '#f3f4f6',
+                        'highlight-blue': '#3b82f6',
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts for Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for transitions */
+        .page-section {
+            display: none;
+        }
+        .page-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .whatsapp-btn {
+            z-index: 1000;
+        }
+        /* Mobile-first layout adjustments */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .navbar .nav-links {
+                flex-direction: column;
+                width: 100%;
+                text-align: left;
+                margin-top: 1rem;
+            }
+            .navbar .nav-links a {
+                padding: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-gray-800">
+
+    <!-- Header & Navigation Bar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center navbar">
+            <div class="flex items-center">
+                <a href="#" class="text-xl font-bold text-primary-blue">PT Langgeng Jaya Larasindo</a>
+            </div>
+            <div class="nav-links flex flex-col md:flex-row gap-4 md:gap-8 mt-4 md:mt-0">
+                <a href="#" data-page="home" class="nav-link text-gray-600 hover:text-highlight-blue transition-colors duration-300 font-medium">Beranda</a>
+                <a href="#" data-page="about" class="nav-link text-gray-600 hover:text-highlight-blue transition-colors duration-300 font-medium">Tentang Kami</a>
+                <a href="#" data-page="products" class="nav-link text-gray-600 hover:text-highlight-blue transition-colors duration-300 font-medium">Produk</a>
+                <a href="#" data-page="projects" class="nav-link text-gray-600 hover:text-highlight-blue transition-colors duration-300 font-medium">Proyek</a>
+                <a href="#" data-page="contact" class="nav-link text-gray-600 hover:text-highlight-blue transition-colors duration-300 font-medium">Kontak</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6282188885707" class="whatsapp-btn fixed bottom-6 right-6 bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-transform duration-300 scale-100 hover:scale-110" target="_blank" aria-label="Hubungi kami di WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.911C.15 6.87 3.513 3.519 7.423 3.519c1.666-.003 3.292.59 4.542 1.688l-1.328 1.328c-.961-.73-2.148-1.127-3.385-1.127-3.154 0-5.748 2.585-5.748 5.742 0 1.545.617 2.97 1.706 4.062l-.707.707 1.329 1.329-1.428.536.878-.426-1.053 3.861L.057 24zM24 12c0-3.351-1.31-6.526-3.655-8.871C17.919.784 14.743 0 11.392 0S4.865.784 2.52 3.129C.174 5.474-.151 8.649.15 12c.114 2.378.85 4.717 2.083 6.643l-2.083 7.575 7.726-2.22c1.78.694 3.658 1.05 5.599 1.05h.001c3.351 0 6.526-1.31 8.871-3.655C22.69 18.526 24 15.351 24 12zm-3.655 6.533c-1.328 1.328-3.084 2.057-4.996 2.057h-.001c-1.528 0-3.044-.374-4.382-1.077l-4.227 1.218.825-3.013c-.854-1.391-1.309-2.981-1.309-4.577.001-3.155 2.584-5.742 5.739-5.742s5.739 2.587 5.739 5.742c0 1.912-.589 3.69-1.706 5.068z"/>
+        </svg>
+    </a>
+
+    <!-- Main Content Area - Simulating Pages -->
+    <main class="min-h-screen">
+
+        <!-- Home Page -->
+        <section id="home" class="page-section active">
+            <!-- Hero Section -->
+            <div class="relative bg-gray-900 text-white">
+                <img src="https://cdn.pixabay.com/photo/2020/01/26/11/14/construction-4794329_960_720.png" alt="Produk MEP dan Konstruksi" class="w-full h-96 object-cover object-center opacity-40">
+                <div class="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+                    <h1 class="text-3xl md:text-5xl font-bold mb-4 animate-fade-in-down">Mewujudkan Konstruksi Impian Anda</h1>
+                    <p class="text-base md:text-xl mb-8 animate-fade-in-up">Trading & Supplier terpercaya untuk produk MEP, HVAC, dan bahan konstruksi berkualitas.</p>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <a href="#" data-page="products" class="nav-link bg-highlight-blue text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-600 transition-colors duration-300">Lihat Produk</a>
+                        <a href="https://wa.me/6282188885707" target="_blank" class="bg-white text-primary-blue font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transition-colors duration-300">Hubungi Kami</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Us Short Section -->
+            <div class="container mx-auto px-4 py-16">
+                <h2 class="text-3xl font-bold text-center mb-12 text-primary-blue">Sekilas tentang PT Langgeng Jaya Larasindo</h2>
+                <div class="max-w-4xl mx-auto text-center text-lg text-gray-700">
+                    <p class="mb-4">PT Langgeng Jaya Larasindo adalah perusahaan trading terkemuka di bidang produk konstruksi umum, dengan fokus pada MEP (Mechanical, Electrical, and Plumbing) dan HVAC (Heating, Ventilation, and Air Conditioning). Kami berkomitmen untuk menyediakan produk berkualitas tinggi dan layanan terbaik untuk mendukung kesuksesan setiap proyek konstruksi di seluruh Indonesia.</p>
+                    <p>Dengan pengalaman dan jaringan yang luas, kami menjadi mitra terpercaya bagi para kontraktor, pengembang, dan individu yang mencari solusi material konstruksi yang efisien dan andal.</p>
+                    <a href="#" data-page="about" class="nav-link mt-6 inline-block text-highlight-blue font-semibold hover:underline">Selengkapnya tentang kami &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Main Product Categories -->
+            <div class="bg-secondary-grey py-16">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-primary-blue">Kategori Produk Utama</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Card 1 -->
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center p-6 hover:shadow-xl transition-shadow duration-300">
+                            <img src="https://condorarabia.com/wp-content/uploads/2020/02/HVACelectrical8-1-1024x768.jpg" alt="HVAC Products" class="mx-auto mb-4">
+                            <h3 class="text-xl font-semibold mb-2">HVAC</h3>
+                            <p class="text-gray-600">Sistem pemanas, ventilasi, dan pendingin udara untuk kenyamanan optimal.</p>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center p-6 hover:shadow-xl transition-shadow duration-300">
+                            <img src="https://www.wallshq.com/wp-content/uploads/2020/02/88189376_1562646650551131_4806415025264656384_n-scaled.jpg" alt="MEP Products" class="mx-auto mb-4">
+                            <h3 class="text-xl font-semibold mb-2">MEP</h3>
+                            <p class="text-gray-600">Material untuk instalasi Mekanikal, Elektrikal, dan Plumbing.</p>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center p-6 hover:shadow-xl transition-shadow duration-300">
+                            <img src="https://cpimg.tistatic.com/08451070/b/4/Grills-Diffusers.jpg" alt="General Construction Products" class="mx-auto mb-4">
+                            <h3 class="text-xl font-semibold mb-2">Konstruksi Umum</h3>
+                            <p class="text-gray-600">Beragam material dan perlengkapan untuk kebutuhan konstruksi bangunan.</p>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center p-6 hover:shadow-xl transition-shadow duration-300">
+                            <img src="https://images.adsttc.com/media/images/619d/4b92/3143/4064/b38b/7bc3/newsletter/primary-all-a.jpg?1637698456" alt="Interior Products" class="mx-auto mb-4">
+                            <h3 class="text-xl font-semibold mb-2">Interior</h3>
+                            <p class="text-gray-600">Produk pendukung untuk finishing dan estetika interior ruangan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company Advantages -->
+            <div class="container mx-auto px-4 py-16">
+                <h2 class="text-3xl font-bold text-center mb-12 text-primary-blue">Keunggulan Kami</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <!-- Advantage 1 -->
+                    <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-highlight-blue mb-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.5a.5.5 0 001 0V3a1 1 0 112 0v1.5a.5.5 0 001 0V3a1 1 0 112 0v1.5a.5.5 0 001 0V3a1 1 0 112 0v2a.5.5 0 001 0v-2a1 1 0 112 0v2a.5.5 0 001 0v-2a1 1 0 112 0v2a.5.5 0 001 0v-2a1 1 0 111 1.732v.268a.5.5 0 001 0V11a.5.5 0 001 0V9a.5.5 0 00-1 0v2a.5.5 0 00-1 0v-2a.5.5 0 00-1 0v2a.5.5 0 00-1 0v-2a.5.5 0 00-1 0v2a.5.5 0 00-1 0V9a.5.5 0 00-1 0V7a.5.5 0 00-1 0v2a.5.5 0 00-1 0V7a.5.5 0 00-1 0v2a.5.5 0 00-1 0V7a.5.5 0 00-1 0V7a.5.5 0 00-1 0V7a.5.5 0 00-1 0V7a.5.5 0 00-1 0V5a.5.5 0 00-1 0V3a1 1 0 011-1z" clip-rule="evenodd" />
+                            <path d="M5.5 12a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM14.5 12a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold mb-2">Produk Berkualitas</h3>
+                        <p class="text-gray-600">Semua produk kami terjamin kualitasnya dan memenuhi standar industri.</p>
+                    </div>
+                    <!-- Advantage 2 -->
+                    <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-highlight-blue mb-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9 2a1 1 0 00-1 1v1.5a.5.5 0 001 0V3a1 1 0 00-1-1zm3 0a1 1 0 00-1 1v1.5a.5.5 0 001 0V3a1 1 0 00-1-1zm-4 4a1 1 0 00-1 1v1.5a.5.5 0 001 0V7a1 1 0 00-1-1zm3 0a1 1 0 00-1 1v1.5a.5.5 0 001 0V7a1 1 0 00-1-1zm3 0a1 1 0 00-1 1v1.5a.5.5 0 001 0V7a1 1 0 00-1-1zm-4 4a1 1 0 00-1 1v1.5a.5.5 0 001 0V11a1 1 0 00-1-1zm3 0a1 1 0 00-1 1v1.5a.5.5 0 001 0V11a1 1 0 00-1-1zm3 0a1 1 0 00-1 1v1.5a.5.5 0 001 0V11a1 1 0 00-1-1zm-4 4a1 1 0 00-1 1v1.5a.5.5 0 001 0V15a1 1 0 00-1-1zm3 0a1 1 0 00-1 1v1.5a.5.5 0 001 0V15a1 1 0 00-1-1zm3 0a1 1 0 00-1 1v1.5a.5.5 0 001 0V15a1 1 0 00-1-1zM2 6h16v12H2V6zm2 2v8h12V8H4z" />
+                            <path fill-rule="evenodd" d="M12.707 10.293a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L10 13.414l2.293 2.293a1 1 0 001.414-1.414l-3-3z" clip-rule="evenodd" />
+                        </svg>
+                        <h3 class="text-xl font-semibold mb-2">Pengiriman Cepat</h3>
+                        <p class="text-gray-600">Logistik kami yang terorganisir memastikan produk sampai tepat waktu.</p>
+                    </div>
+                    <!-- Advantage 3 -->
+                    <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-highlight-blue mb-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zm0 16a1 1 0 00-1 1v1a1 1 0 002 0v-1a1 1 0 00-1-1zM4.929 4.929a1 1 0 001.414-1.414l-1.414-1.414a1 1 0 10-1.414 1.414l1.414 1.414zM15.071 15.071a1 1 0 00-1.414 1.414l1.414 1.414a1 1 0 001.414-1.414l-1.414-1.414zM16 10a1 1 0 001 1h1a1 1 0 000-2h-1a1 1 0 00-1 1zM2 10a1 1 0 001 1h1a1 1 0 000-2H3a1 1 0 00-1 1zM15.071 4.929a1 1 0 00-1.414-1.414l-1.414 1.414a1 1 0 001.414 1.414l1.414-1.414zM4.929 15.071a1 1 0 001.414 1.414l1.414-1.414a1 1 0 00-1.414-1.414l-1.414 1.414z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold mb-2">Layanan Ramah</h3>
+                        <p class="text-gray-600">Tim kami siap membantu dan memberikan solusi terbaik dengan pelayanan yang ramah.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action Section -->
+            <div class="bg-primary-blue text-white py-16">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl font-bold mb-4">Butuh produk konstruksi? Hubungi kami sekarang!</h2>
+                    <p class="text-lg mb-8">Dapatkan penawaran terbaik untuk kebutuhan proyek Anda.</p>
+                    <a href="https://wa.me/6282188885707" target="_blank" class="bg-highlight-blue text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-600 transition-colors duration-300">Dapatkan Penawaran</a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- About Us Page -->
+        <section id="about" class="page-section">
+            <div class="container mx-auto px-4 py-16">
+                <nav class="text-sm mb-8" aria-label="breadcrumb">
+                    <ol class="list-none p-0 inline-flex">
+                        <li class="flex items-center">
+                            <a href="#" data-page="home" class="nav-link text-gray-500 hover:text-gray-700">Beranda</a>
+                            <svg class="fill-current w-3 h-3 mx-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.58 256 34.484 94.254c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.029c9.373 9.372 9.373 24.568.001 33.942z"/></svg>
+                        </li>
+                        <li>
+                            <span class="text-primary-blue">Tentang Kami</span>
+                        </li>
+                    </ol>
+                </nav>
+                <h1 class="text-4xl font-bold text-center mb-12 text-primary-blue">Tentang Kami</h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">PT Langgeng Jaya Larasindo adalah perusahaan trading terkemuka di bidang produk konstruksi umum, dengan fokus pada MEP (Mechanical, Electrical, and Plumbing). Berdiri dengan komitmen kuat untuk menjadi mitra terpercaya bagi setiap proyek pembangunan, kami menyediakan solusi material berkualitas yang inovatif dan andal.</p>
+                        <p class="text-lg text-gray-700 leading-relaxed">Kami percaya bahwa fondasi sebuah bangunan yang kokoh tidak hanya terletak pada struktur, tetapi juga pada sistem pendukung yang efisien dan berkualitas. Oleh karena itu, kami terus berupaya menyediakan produk-produk terbaik dari merek-merek ternama, memastikan setiap detail proyek Anda terpenuhi dengan standar tertinggi.</p>
+                        <div class="mt-8">
+                            <h2 class="text-2xl font-bold text-primary-blue mb-4">Visi</h2>
+                            <p class="text-lg text-gray-700 leading-relaxed">Menjadi mitra terpercaya dalam menyediakan produk konstruksi berkualitas tinggi yang mendukung kesuksesan proyek bangunan dan perumahan di seluruh Indonesia.</p>
+                        </div>
+                    </div>
+                    <div class="relative w-full h-80 bg-secondary-grey rounded-lg shadow-md overflow-hidden">
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.FS6HeumWBee08ZuRbI6G1QHaJP?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Foto Kantor atau Tim" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="mt-16">
+                    <h2 class="text-2xl font-bold text-primary-blue mb-6">Misi</h2>
+                    <ul class="list-disc list-inside space-y-3 text-lg text-gray-700">
+                        <li>Menyediakan produk MEP, HVAC, dan interior berkualitas tinggi yang memenuhi standar industri.</li>
+                        <li>Memberikan layanan pelanggan yang unggul dengan fokus pada kepuasan dan kebutuhan klien.</li>
+                        <li>Menyokong keberlanjutan dan inovasi dalam setiap proyek.</li>
+                        <li>Membangun hubungan jangka panjang dengan mitra dan klien melalui kepercayaan dan integritas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Page -->
+        <section id="products" class="page-section">
+            <div class="container mx-auto px-4 py-16">
+                <nav class="text-sm mb-8" aria-label="breadcrumb">
+                    <ol class="list-none p-0 inline-flex">
+                        <li class="flex items-center">
+                            <a href="#" data-page="home" class="nav-link text-gray-500 hover:text-gray-700">Beranda</a>
+                            <svg class="fill-current w-3 h-3 mx-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.58 256 34.484 94.254c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.029c9.373 9.372 9.373 24.568.001 33.942z"/></svg>
+                        </li>
+                        <li>
+                            <span class="text-primary-blue">Produk</span>
+                        </li>
+                    </ol>
+                </nav>
+                <h1 class="text-4xl font-bold text-center mb-12 text-primary-blue">Produk Kami</h1>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Product Card Template -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://ja-glover.co.uk/wp-content/uploads/2018/07/Diffuser-2-e1534934170873.jpg" alt="SAD - Diffuser" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">SAD - Diffuser</h3>
+                            <p class="text-gray-600">Diffuser yang dirancang untuk distribusi udara seragam dan efisien dalam ruangan.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.jsNay4m7kRXkDsKinohdrgAAAA?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Jett Diffuser" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Jett Diffuser</h3>
+                            <p class="text-gray-600">Diffuser dengan desain khusus untuk jarak jangkauan udara yang jauh, ideal untuk area luas.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://5.imimg.com/data5/MG/OJ/MY-9103635/jet-nozzle-diffuser-500x500.jpg" alt="Jett Nozzle Diffuser" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Jett Nozzle Diffuser</h3>
+                            <p class="text-gray-600">Nozzle diffuser yang dapat disesuaikan arahnya untuk aliran udara yang presisi.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://cpimg.tistatic.com/08363793/b/4/Single-Deflection-Grille.jpg" alt="RAG - single deflection" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">RAG - single deflection</h3>
+                            <p class="text-gray-600">Grille defleksi tunggal untuk mengarahkan aliran udara ke satu arah.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 5 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.CYIKXshFVJ6RkxzEDLrebQHaE8?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="SAG - Double Deflection" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">SAG - Double DEflection</h3>
+                            <p class="text-gray-600">Grille defleksi ganda untuk kontrol arah aliran udara yang lebih fleksibel.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 6 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://tofee.com.cn/wp-content/uploads/2019/09/Linear-Bar-Air-Grille-2.png" alt="Bar Grille" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Bar Grille</h3>
+                            <p class="text-gray-600">Grille dengan desain batang horizontal atau vertikal yang elegan dan fungsional.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 7 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://www.polyairecommercial.com.au/assets/product-files/LinearSlotDiffusersLSD600x300.png" alt="Linear Slot Diffuser" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Linear Slot Diffuser</h3>
+                            <p class="text-gray-600">Diffuser dengan desain slot linier yang cocok untuk instalasi di langit-langit.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 8 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.cJFXOfCWgbO2zDzA8YUvgQHaE8?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Stainless Perforated" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Stainless Perforated</h3>
+                            <p class="text-gray-600">Bahan lembaran baja tahan karat berlubang untuk berbagai aplikasi konstruksi.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 9 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2023/6/314008812/GI/NF/ZJ/113189887/ms-volume-control-damper-500x500.jpg" alt="Volume Damper" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Volume Damper</h3>
+                            <p class="text-gray-600">Damper untuk mengontrol volume aliran udara di dalam ducting.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 10 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2020/8/NB/JW/VM/2024256/fire-damper.jpg" alt="FIRE Damper" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">FIRE Damper</h3>
+                            <p class="text-gray-600">Damper pengaman yang menutup secara otomatis untuk mencegah penyebaran api.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 11 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://www.klimafrance.com/media/catalog/product/cache/4fa07aa1e1911d61f093e69f740d745f/I/M/IM_KGA7FP_2.png" alt="Mainhole" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Mainhole</h3>
+                            <p class="text-gray-600">Aksesori untuk memudahkan pemeliharaan dan inspeksi sistem ducting.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 12 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://www.metalpress.co.il/wp-content/uploads/%D7%9E%D7%A4%D7%96%D7%A8%D7%99-%D7%92%D7%98-%E2%80%93-Drum-Louver.png" alt="Drum Jett Diffuser" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Drum Jett Diffuser</h3>
+                            <p class="text-gray-600">Diffuser berbentuk drum yang dapat diputar untuk mengatur arah aliran udara.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 13 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://image.harijayainsulation.com/s3/productimages/webp/co191030/p1266765/w600-h600/5cdac32d-acfc-4e79-b17c-99a73e224c82.jpg" alt="Flexible Isolasi Aluminium and Non-Isolasi" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Flexible Isolasi Aluminium and Non-Isolasi</h3>
+                            <p class="text-gray-600">Ducting fleksibel dengan atau tanpa isolasi, untuk instalasi yang mudah.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 14 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://cdn.trox.de/3bf55bdf288f8477/c1176a8a1ab6/v/16bf5e32641f/00134727_0.png" alt="Box Trox" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Box Trox</h3>
+                            <p class="text-gray-600">Box khusus untuk sistem HVAC, membantu mengoptimalkan distribusi udara.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 15 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://5.imimg.com/data5/ANDROID/Default/2020/11/JD/BL/SR/38955090/product-jpeg-500x500.jpg" alt="Plenum Box" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Plenum Box</h3>
+                            <p class="text-gray-600">Kotak plenum yang berfungsi sebagai ruang distribusi udara untuk diffuser.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 16 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://s.alicdn.com/@sc04/kf/He13d676e62a447ed9e4707b4b4be84bdF/Modern-Aluminum-Alloy-Linear-Slot-Diffuser-Plenum-Box-Square-Linear-Grille-for-Office-Air-Conditioning-Supply-Floor-Vent.jpg" alt="Grille Box + Sock" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Grille Box + Sock</h3>
+                            <p class="text-gray-600">Kotak grille yang sudah dilengkapi dengan sock untuk instalasi yang lebih praktis.</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 17 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://gerhman.com/wp-content/uploads/2025/05/Nu-800x800.jpg" alt="Round Plaque Diffuser" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Round Plaque Diffuser</h3>
+                            <p class="text-gray-600">Diffuser bulat dengan desain elegan, cocok untuk berbagai gaya interior.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project References Page -->
+        <section id="projects" class="page-section">
+            <div class="container mx-auto px-4 py-16">
+                <nav class="text-sm mb-8" aria-label="breadcrumb">
+                    <ol class="list-none p-0 inline-flex">
+                        <li class="flex items-center">
+                            <a href="#" data-page="home" class="nav-link text-gray-500 hover:text-gray-700">Beranda</a>
+                            <svg class="fill-current w-3 h-3 mx-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.58 256 34.484 94.254c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.029c9.373 9.372 9.373 24.568.001 33.942z"/></svg>
+                        </li>
+                        <li>
+                            <span class="text-primary-blue">Proyek</span>
+                        </li>
+                    </ol>
+                </nav>
+                <h1 class="text-4xl font-bold text-center mb-12 text-primary-blue">Referensi Proyek Kami</h1>
+                <p class="text-center text-lg text-gray-700 mb-12">Berikut adalah beberapa proyek yang telah menggunakan produk kami.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Placeholder Project Photo Card -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://cdn.travelio.id/hotel/8835b-658bc89f872e5db3cc0d18a5/WhatsApp-Image-2023-12-20-at-13-42-52_l.jpeg" alt="Foto Proyek 1" class="w-full h-64 object-cover">
+                        <div class="p-4 text-center">
+                            <p class="text-lg font-semibold">Apartemen Tokyo Riverside Pik 2</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://ratakiri.com/wp-content/uploads/2024/03/ratakiri-design-bsi-tower-signage.jpg" alt="Foto Proyek 2" class="w-full h-64 object-cover">
+                        <div class="p-4 text-center">
+                            <p class="text-lg font-semibold">BSI Tower Jakarta Pusat</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://media-cdn.tripadvisor.com/media/photo-p/13/2a/a5/ae/e-nuramaliasari.jpg" alt="Foto Proyek 3" class="w-full h-64 object-cover">
+                        <div class="p-4 text-center">
+                            <p class="text-lg font-semibold">Hotel BnB Cikarang</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://prod-cdn.flokq.com/images/Apartemen_Jabodetabek_Cikarang_Bekasi_Elvis_Tower_Jababeka_realestat_id_dok_517c2e04c9/Apartemen_Jabodetabek_Cikarang_Bekasi_Elvis_Tower_Jababeka_realestat_id_dok_517c2e04c9.jpg" alt="Foto Proyek 4" class="w-full h-64 object-cover">
+                        <div class="p-4 text-center">
+                            <p class="text-lg font-semibold">Apartemen Elvis Cikarang</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://cdn.medcom.id/dynamic/content/2017/04/27/692337/EeOS5qWGyp.jpg?w=640" alt="Foto Proyek 5" class="w-full h-64 object-cover">
+                        <div class="p-4 text-center">
+                            <p class="text-lg font-semibold">Pasar Cisalak Depok</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/7/7f/Athlete%27s_village_for_Asian_Games_2018%2C_2017.jpg" alt="Foto Proyek 6" class="w-full h-64 object-cover">
+                        <div class="p-4 text-center">
+                            <p class="text-lg font-semibold">Wisma Atlet sunter</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page-section">
+            <div class="container mx-auto px-4 py-16">
+                <nav class="text-sm mb-8" aria-label="breadcrumb">
+                    <ol class="list-none p-0 inline-flex">
+                        <li class="flex items-center">
+                            <a href="#" data-page="home" class="nav-link text-gray-500 hover:text-gray-700">Beranda</a>
+                            <svg class="fill-current w-3 h-3 mx-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.58 256 34.484 94.254c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.029c9.373 9.372 9.373 24.568.001 33.942z"/></svg>
+                        </li>
+                        <li>
+                            <span class="text-primary-blue">Kontak</span>
+                        </li>
+                    </ol>
+                </nav>
+                <h1 class="text-4xl font-bold text-center mb-12 text-primary-blue">Hubungi Kami</h1>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Info Section -->
+                    <div>
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold text-primary-blue mb-4">Informasi Kontak</h2>
+                            <p class="text-lg text-gray-700 mb-2"><strong>Alamat:</strong> Ruko Duta Garden, Jl. Husein Sastranegara No.E57, RT.026/RW.008, Jurumudi, Kec. Benda, Kota Tangerang, Banten 15124</p>
+                            <p class="text-lg text-gray-700 mb-2"><strong>Telepon/WhatsApp:</strong> <a href="https://wa.me/6282188885707" target="_blank" class="text-highlight-blue hover:underline">0821-8888-5707</a></p>
+                            <p class="text-lg text-gray-700"><strong>Email:</strong> <a href="mailto:hachindo.marketing@gmail.com" class="text-highlight-blue hover:underline">hachindo.marketing@gmail.com</a></p>
+                        </div>
+                        <div class="h-96 w-full rounded-lg overflow-hidden shadow-md">
+                            <!-- Google Maps Embed Placeholder -->
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.861735749386!2d106.6806509758784!3d-6.149176393842183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f8c62c9540e1%3A0x6a2c918451152d11!2sRuko%20Duta%20Garden%20Blok%20E57!5e0!3m2!1sen!2sid!4v1689254060851!5m2!1sen!2sid" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Lokasi Kantor PT Langgeng Jaya Larasindo">
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="bg-secondary-grey p-8 rounded-lg shadow-md">
+                        <h2 class="text-2xl font-semibold text-primary-blue mb-4">Kirim Pesan Kepada Kami</h2>
+                        <form id="contact-form">
+                            <div class="mb-4">
+                                <label for="nama" class="block text-gray-700 font-medium mb-2">Nama Lengkap</label>
+                                <input type="text" id="nama" name="nama" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-highlight-blue transition-colors duration-200" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-highlight-blue transition-colors duration-200" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="subjek" class="block text-gray-700 font-medium mb-2">Subjek</label>
+                                <input type="text" id="subjek" name="subjek" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-highlight-blue transition-colors duration-200" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="pesan" class="block text-gray-700 font-medium mb-2">Pesan</label>
+                                <textarea id="pesan" name="pesan" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-highlight-blue transition-colors duration-200" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary-blue text-white font-semibold py-3 px-4 rounded-lg hover:bg-highlight-blue transition-colors duration-300 shadow-md">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary-blue text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; <span id="current-year"></span> PT Langgeng Jaya Larasindo. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script to handle page switching and footer year -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageSections = document.querySelectorAll('.page-section');
+            const currentYearSpan = document.getElementById('current-year');
+            const contactForm = document.getElementById('contact-form');
+
+            // Set current year in footer
+            currentYearSpan.textContent = new Date().getFullYear();
+
+            // Function to show a specific page
+            const showPage = (pageId) => {
+                pageSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(pageId).classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            // Event listener for navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = e.target.dataset.page;
+                    if (pageId) {
+                        showPage(pageId);
+                    }
+                });
+            });
+
+            // Handle contact form submission (mock)
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // In a real application, this is where you would send the form data to a server.
+                alert('Terima kasih, pesan Anda telah berhasil dikirim!');
+                contactForm.reset();
+            });
+
+            // Show the home page on initial load
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
